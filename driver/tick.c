@@ -4,6 +4,7 @@
 
 
 static volatile uint32_t gTick = 0;
+static volatile uint32_t gUsTick = 0;
 
 uint32_t Tick_Get() {
     return gTick;
@@ -63,5 +64,47 @@ void TIM2_Handler(void) {
         TIM_ClearFlag(TIM2, TIM_FLAG_ARF);
         gTick++;;
     }
+}
+
+/**
+  * @brief  定时器3,1us时钟节拍
+  * @param  None
+  * @retval None
+  */
+void usTick_Init(void) {
+    NVIC_InitTypeDef NVIC_InitStruct; //定义一个NVIC_InitTypeDef类型的结构体
+    TIM_TimeBaseInitTypeDef  TIM_TimeBaseInitStruct;//定义一个NVIC_InitTypeDef类型的结构体
+
+    TIM_TimeBaseInitStruct.TIM_Prescaler = 48-1; //48M/48=1MHZ
+    TIM_TimeBaseInitStruct.TIM_AutoReload = 1; //   1/（1MHZ）* 1 = 1us
+    TIM_TimeBaseInitStruct.TIM_Direction = TIM_Direction_Up; //向上计数
+    TIM_TimeBaseInit(TIM3, &TIM_TimeBaseInitStruct); //初始化TIM3
+
+    TIM_ITConfig(TIM3,TIM_IT_ARI,ENABLE); //定时中断初始化
+
+    NVIC_InitStruct.NVIC_IRQChannel = TIM3_IRQn; //定时中断源设置
+    NVIC_InitStruct.NVIC_IRQChannelPriority = 0x00; //中断优先级设置
+    NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE; //使能NVIC控制器
+    NVIC_Init(&NVIC_InitStruct); //初始化NVIC
+
+    TIM_Cmd(TIM3, ENABLE); //开启TIM3
+}
+
+
+/**
+* @brief TIMER3中断服务函数
+* @param None
+* @retval None
+*/
+void TIM3_Handler(void) {
+    if (TIM_GetFlagStatus(TIM3, TIM_FLAG_ARF) != RESET) {
+        TIM_ClearFlag(TIM3, TIM_FLAG_ARF);
+        gUsTick++;;
+    }
+}
+
+void usTick_Delay(uint32_t usTickSpan) {
+    uint32_t from = gUsTick;
+    while (gUsTick - from < usTickSpan);
 }
 

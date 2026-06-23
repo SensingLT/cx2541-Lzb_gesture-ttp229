@@ -8,6 +8,7 @@
 ".\out\protocol.o"
 ".\out\clap.o"
 ".\out\slide.o"
+".\out\threshold.o"
 ".\out\startup_pt32y003x.o"
 ".\out\system_pt32y003x.o"
 ".\out\pt32y003x_retarget.o"

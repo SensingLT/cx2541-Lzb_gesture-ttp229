@@ -4,13 +4,14 @@
 #include "uart.h"
 #include "crc.h"
 #include "buildInfo.h"
+#include "threshold.h"
 
 //发送连拍检测结果
 void reportClapStatus(clap_count_e pClapCounts)
 {
 	msg_clap_t report;
 	report.clap_counts = pClapCounts;
-	FILL_MSG(report);
+	FILL_CLAP_MSG(report);
 
 #if (DEBUG_MODE == 0)
 	//上报消息
@@ -34,7 +35,33 @@ void reportSlideStatus(slide_direction_e pSlideDirection)
 {
 	msg_slide_t report;
 	report.slide_direction = pSlideDirection;
-	FILL_MSG(report);
+	FILL_SLIDE_MSG(report);
+
+#if (DEBUG_MODE == 0)
+	//上报消息
+	Uart_SendData((uint8_t*)&report, sizeof(report));
+#else
+	//打印
+	static char buf[100];
+	memset(buf, 0, sizeof(buf));
+	int len = 0;
+	uint8_t* p = (uint8_t*)&report;
+	for (int i = 0; i < sizeof(report); i++) {
+		len += sprintf(buf + len, "%02X ", *p++);
+	}
+	len += sprintf(buf + len, "\n");
+	Uart_SendStr(buf);
+#endif
+}
+
+//发送参数调节结果
+void reportClapParam()
+{
+	msg_clap_time_param_t report;
+	const clap_param_t *clapParam = ClapParam_Read();
+	report.min_interval_time = clapParam->min_interval_time;
+	report.max_timeout = clapParam->max_timeout;
+	FILL_RESP_MSG(report);
 
 #if (DEBUG_MODE == 0)
 	//上报消息
@@ -84,5 +111,39 @@ bool Protocol_HandleMsg(const uint8_t* pMsg, uint16_t length) {
 			return true;
 		}
 	}
-    return false;
+	
+		//二进制消息处理
+	if (length < sizeof(msg_header_t)) {
+		DBG_LN("msg len %d is too short", length);
+		return false;
+	}
+
+	const msg_header_t* pHeader = (const msg_header_t*)pMsg;
+	if (length < pHeader->size) {
+		DBG_LN("length %d < size %d", length, pHeader->size); //debug mode才会自动生效
+		return false;
+	}
+	
+	if (!CHECK_CRC(pHeader)) {
+		DBG_LN("crc mismatch");
+		return false;
+	}
+	
+	msg_clap_time_param_t* configMsg = (msg_clap_time_param_t*)pMsg;
+	//如果两个时间参数都为0值就恢复默认值
+	if(configMsg->min_interval_time == 0 && configMsg->max_timeout == 0){
+		configMsg->min_interval_time = MULTI_PRESS_INTERVAL_TICK;
+		configMsg->max_timeout = MULTI_PRESS_TIMEOUT_TICK;
+	}
+	
+	//写入新的时间参数
+	clap_param_t newClapParam;
+	newClapParam.min_interval_time = configMsg->min_interval_time;
+	newClapParam.max_timeout = configMsg->max_timeout;
+	
+	if(!ClapParam_Write(&newClapParam)){
+		return false;
+	}
+	reportClapParam();
+    return true;
 }

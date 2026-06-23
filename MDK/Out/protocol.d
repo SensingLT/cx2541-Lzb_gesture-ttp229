@@ -1,5 +1,5 @@
 ./out/protocol.o: ..\peripheral\protocol.c \
-  ..\..\cx2541-Lzb_gesture\config.h ..\peripheral\protocol.h \
+  ..\..\cx2541-Lzb_gesture-ttp229\config.h ..\peripheral\protocol.h \
   ..\peripheral\clap.h ..\peripheral\slide.h ..\driver\uart.h \
   ..\driver\tick.h ..\peripheral\crc.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x.h \
@@ -22,4 +22,4 @@
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_rcc.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_id.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_exti.h \
-  ..\public\inc\buildInfo.h
+  ..\public\inc\buildInfo.h ..\peripheral\threshold.h

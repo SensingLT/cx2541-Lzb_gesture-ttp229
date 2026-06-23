@@ -11,6 +11,7 @@
 #include "clap.h"
 #include "slide.h"
 #include "public.h"
+#include "threshold.h"
 
 // 复位控制代码，必须使用 
 void NRST_PBO_SetZero(void) 
@@ -29,7 +30,10 @@ void NRST_PBO_SetZero(void)
 int main (void) {
 	NRST_PBO_SetZero();
 	Tick_Init();
+	usTick_Init();
 	Uart_Init(9600);
+	Tick_Delay(100);//电容芯片上电1S稳定期
+	ClapParam_Init();
 	Wdg_Init(WDG_COUNTER_PER_SECOND); //timeout=1s 设置看门狗重装载值
 #if(DETECT_MODE > 0)
 		clap_init();
@@ -40,8 +44,23 @@ int main (void) {
 	while (1) {	
 		#if(DETECT_MODE > 0)
 			static uint32_t clapTick = 0;
-			if (Tick_Passed(&clapTick, 10)) {//100ms
-				clap_task();
+			if (Tick_Passed(&clapTick, 8)) {//40ms
+				clap_task();	
+			}
+			static uint32_t dbgTick = 0;
+			if (Tick_Passed(&dbgTick, 1)) {
+				int msgLen = Uart_GetRevMsg(revMsg, UART_MAX_REV_LEN);
+				if (msgLen > 0) {
+					//Uart_SendStr("rev: %d, %s", msgLen, revMsg);
+					if (!Protocol_HandleMsg(revMsg, msgLen)) {
+						if (msgLen < UART_MAX_REV_LEN) {
+							revMsg[msgLen] = 0;
+						}
+						DBG_LN("unhandled msg[len = %d]: %s", msgLen, revMsg);
+					}
+	//			} else {
+	//				Uart_SendStr("not rev a msg: %d \r\n", msgLen);
+				}
 			}
 		#else
 			static uint32_t slideTick = 0;
@@ -52,8 +71,6 @@ int main (void) {
 		Wdg_Feed();
 	}
 }
-
-
 
 
 #ifdef  USE_FULL_ASSERT

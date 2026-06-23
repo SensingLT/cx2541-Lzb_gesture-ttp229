@@ -1,9 +1,9 @@
-./out/threshold.o: ..\threshold.c ..\threshold.h \
+./out/threshold.o: ..\peripheral\threshold.c ..\peripheral\threshold.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x.h \
   ..\Libraries\CMSIS\core_cm0.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32_Type.h \
   ..\Libraries\SYSTEM\system_PT32Y003x.h \
-  ..\..\CX2504-MotorBike\PT32Y003x_conf.h \
+  ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_conf.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_gpio.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_tim.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_nvic.h \
@@ -18,7 +18,7 @@
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_pwr.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_rcc.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_id.h \
-  ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_exti.h ..\crc.h \
-  ..\driver\uart.h ..\..\CX2504-MotorBike\config.h \
-  ..\..\CX2504-MotorBike\tick.h ..\..\CX2504-MotorBike\protocol.h \
-  ..\..\CX2504-MotorBike\Seat.h ..\..\CX2504-MotorBike\threshold.h
+  ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_exti.h ..\peripheral\crc.h \
+  ..\driver\uart.h ..\..\cx2541-Lzb_gesture-ttp229\config.h \
+  ..\driver\tick.h ..\peripheral\protocol.h ..\peripheral\clap.h \
+  ..\peripheral\slide.h

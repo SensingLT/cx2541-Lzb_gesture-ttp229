@@ -20,6 +20,6 @@
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_id.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_exti.h ..\driver\tick.h \
   ..\driver\wdg.h ..\driver\adc.h ..\driver\uart.h \
-  ..\..\cx2541-Lzb_gesture\config.h ..\peripheral\protocol.h \
+  ..\..\cx2541-Lzb_gesture-ttp229\config.h ..\peripheral\protocol.h \
   ..\peripheral\clap.h ..\peripheral\slide.h ..\peripheral\crc.h \
-  ..\..\cx2541-Lzb_gesture\public.h
+  ..\..\cx2541-Lzb_gesture-ttp229\public.h ..\peripheral\threshold.h

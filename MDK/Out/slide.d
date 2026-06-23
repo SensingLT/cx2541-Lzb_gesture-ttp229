@@ -1,6 +1,6 @@
 ./out/slide.o: ..\peripheral\slide.c ..\peripheral\slide.h \
-  ..\driver\uart.h ..\..\cx2541-Lzb_gesture\config.h ..\driver\tick.h \
-  ..\peripheral\protocol.h ..\peripheral\clap.h \
+  ..\driver\uart.h ..\..\cx2541-Lzb_gesture-ttp229\config.h \
+  ..\driver\tick.h ..\peripheral\protocol.h ..\peripheral\clap.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x.h \
   ..\Libraries\CMSIS\core_cm0.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32_Type.h \

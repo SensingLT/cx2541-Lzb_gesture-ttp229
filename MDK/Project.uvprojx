@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,USE_FULL_ASSERT</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\PT32Y003x_FWLib\inc;..\Libraries\SYSTEM;..\Libraries\CMSIS;..\driver;..\RTT;..\MDK;..\public\inc;..\peripheral;..\..\cx2541-Lzb_gesture</IncludePath>
+              <IncludePath>..\Libraries\PT32Y003x_FWLib\inc;..\Libraries\SYSTEM;..\Libraries\CMSIS;..\driver;..\RTT;..\MDK;..\public\inc;..\peripheral;..\..\cx2541-Lzb_gesture-ttp229</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -488,6 +488,16 @@
               <FileName>slide.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\peripheral\slide.h</FilePath>
+            </File>
+            <File>
+              <FileName>threshold.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\peripheral\threshold.h</FilePath>
+            </File>
+            <File>
+              <FileName>threshold.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\peripheral\threshold.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -25,5 +25,7 @@ bool Tick_Passed(uint32_t* pBaseTick, uint32_t tickSpan);
 
 
 void Tick_Delay(uint32_t tickSpan);
+void usTick_Delay(uint32_t usTickSpan);
+void usTick_Init(void) ;
 
 #endif

@@ -6,7 +6,9 @@
 #include "clap.h"
 #include "slide.h"
 
-#define MSG_MAGIC 0xAEAE
+#define CLAP_MSG_MAGIC 0xAEAE
+#define SLIDE_MSG_MAGIC 0x55AA
+#define CLAP_RESP_MAGIC 0x5A5A
 
 typedef struct {
 	uint16_t	magic; //固定为MSG_MAGIC
@@ -24,10 +26,29 @@ typedef struct {
 	slide_direction_e slide_direction;
 }msg_slide_t;
 
-#define FILL_MSG(msg) \
-	msg.header.magic = MSG_MAGIC, \
+typedef struct {
+	msg_header_t header;
+	uint16_t  min_interval_time;//连拍最小间隔时间
+	uint16_t  max_timeout;//连拍超时时间
+}msg_clap_time_param_t;
+
+#define FILL_CLAP_MSG(msg) \
+	msg.header.magic = CLAP_MSG_MAGIC, \
 	msg.header.size = sizeof(msg), \
 	msg.header.crc = crc16((const uint8_t*)&msg.header.size, sizeof(msg) - 4)
+		
+#define FILL_SLIDE_MSG(msg) \
+	msg.header.magic = SLIDE_MSG_MAGIC, \
+	msg.header.size = sizeof(msg), \
+	msg.header.crc = crc16((const uint8_t*)&msg.header.size, sizeof(msg) - 4)
+		
+#define FILL_RESP_MSG(msg) \
+	msg.header.magic = CLAP_RESP_MAGIC, \
+	msg.header.size = sizeof(msg), \
+	msg.header.crc = crc16((const uint8_t*)&msg.header.size, sizeof(msg) - 4)
+		
+	
+#define CHECK_CRC(pHeader) (pHeader->crc == crc16((const uint8_t*)&pHeader->size, pHeader->size - 4))
 
 bool Protocol_HandleMsg(const uint8_t* pMsg, uint16_t length);
 void reportClapStatus(clap_count_e pClapCounts);

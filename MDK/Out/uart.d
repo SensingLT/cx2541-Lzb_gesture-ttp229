@@ -19,5 +19,5 @@
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_rcc.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_id.h \
   ..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_exti.h ..\driver\uart.h \
-  ..\..\cx2541-Lzb_gesture\config.h ..\driver\tick.h \
+  ..\..\cx2541-Lzb_gesture-ttp229\config.h ..\driver\tick.h \
   ..\peripheral\protocol.h ..\peripheral\clap.h ..\peripheral\slide.h
