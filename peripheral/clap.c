@@ -27,9 +27,10 @@ static void sdo_in(void){
 static void sdo_out(void){
 	GPIO_InitTypeDef GPIO_InitStructure;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OutPP;
-    GPIO_InitStructure.GPIO_Pull = GPIO_Pull_NoPull;
+    GPIO_InitStructure.GPIO_Pull = GPIO_Pull_Up;
 	GPIO_InitStructure.GPIO_Pin  = CLAP_SDO_PIN;
     GPIO_Init(CLAP_SDO_PORT,&GPIO_InitStructure);
+	CLAP_SDO_HIGH;
 }
 
 void clap_init(void){
@@ -40,6 +41,7 @@ void clap_init(void){
     GPIO_InitStructure.GPIO_Pull = GPIO_Pull_Up;
 	GPIO_InitStructure.GPIO_Pin  = CLAP_SCL_PIN;
     GPIO_Init(CLAP_SCL_PORT,&GPIO_InitStructure);
+	CLAP_SCL_HIGH;
 	
 }
 
@@ -52,22 +54,22 @@ static uint8_t clap_keyOut(void) {
 	static bool keyPressed = false;
 	static uint8_t lastKey = 0;
 	sdo_out();
-	CLAP_SDO_HIGH;
 	usTick_Delay(100);
 	CLAP_SDO_LOW;
 	usTick_Delay(20);
-	
 	sdo_in();
+	
     for(int i = 0; i < 8; i++) {
 		CLAP_SCL_HIGH;	
 		usTick_Delay(100);
 		CLAP_SCL_LOW;
-		usTick_Delay(1);
+		usTick_Delay(100);
         if(clap_readSDO() == RESET) {
             keys = i + 1;
-            break;
+            //break;
         }
     }
+	CLAP_SCL_HIGH;	
     if (keys != 0) {
 		// 新按键按下
 		if (!keyPressed || keys != lastKey) {
