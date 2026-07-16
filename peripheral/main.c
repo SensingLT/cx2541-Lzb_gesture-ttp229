@@ -32,14 +32,14 @@ int main (void) {
 	Tick_Init();
 	usTick_Init();
 	Uart_Init(9600);
-	Tick_Delay(100);//电容芯片上电1S稳定期
 	ClapParam_Init();
-	Wdg_Init(WDG_COUNTER_PER_SECOND); //timeout=1s 设置看门狗重装载值
 #if(DETECT_MODE > 0)
 		clap_init();
 #else
 		slide_init();
 #endif
+	Tick_Delay(100);//电容芯片上电0.5S稳定期
+	Wdg_Init(WDG_COUNTER_PER_SECOND); //timeout=1s 设置看门狗重装载值
 	uint8_t revMsg[UART_MAX_REV_LEN];
 	while (1) {	
 		#if(DETECT_MODE > 0)
@@ -64,7 +64,7 @@ int main (void) {
 			}
 		#else
 			static uint32_t slideTick = 0;
-			if (Tick_Passed(&slideTick, 1)) {//5ms
+			if (Tick_Passed(&slideTick, 4)) {//5ms
 				slide_task();
 			}
 		#endif	

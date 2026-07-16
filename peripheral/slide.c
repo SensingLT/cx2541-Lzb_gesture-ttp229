@@ -74,25 +74,26 @@ static uint8_t slide_readSDO(void){
 }
 
 static uint8_t slide_keyOut(void){
-	uint8_t keys = 0;
+    uint8_t keys = 0;
+	static bool keyPressed = false;
+	static uint8_t lastKey = 0;
 	sdo_out();
-	SLIDE_SDO_HIGH;
 	usTick_Delay(100);
 	SLIDE_SDO_LOW;
 	usTick_Delay(20);
-	
 	sdo_in();
-	for(int i = 0;i <16; i++){
+	
+    for(int i = 0; i < 16; i++) {
 		SLIDE_SCL_HIGH;	
 		usTick_Delay(100);
 		SLIDE_SCL_LOW;
-		usTick_Delay(1);	
-		if(slide_readSDO() == RESET){
-			keys = i+1;
-		}
-	}
-	Tick_Delay(1);
-	return keys;
+		usTick_Delay(100);
+        if(slide_readSDO() == RESET) {
+            keys = i + 1;
+        }
+    }
+	SLIDE_SCL_HIGH;	
+	return keys; // ÎÞ°´¼ü×´Ì¬
 }
 
 const static uint8_t minSlideKeys = 3; 

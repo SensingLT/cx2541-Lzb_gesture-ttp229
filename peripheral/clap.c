@@ -66,7 +66,6 @@ static uint8_t clap_keyOut(void) {
 		usTick_Delay(100);
         if(clap_readSDO() == RESET) {
             keys = i + 1;
-            //break;
         }
     }
 	CLAP_SCL_HIGH;	

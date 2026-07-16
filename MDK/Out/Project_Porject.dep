@@ -24,12 +24,12 @@ I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_id.h)(0x685DEAE0)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_exti.h)(0x685DEAE0)
 I (..\driver\tick.h)(0x6A1797EC)
 I (..\driver\uart.h)(0x6861DFCE)
-I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A39E6A3)
+I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A5867DA)
 I (..\peripheral\protocol.h)(0x6A02829A)
 I (..\peripheral\clap.h)(0x694B3B13)
 I (..\peripheral\slide.h)(0x694B44ED)
 F (..\driver\adc.h)(0x6941FBE7)()
-F (..\driver\uart.c)(0x6A068E8D)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -flto -Werror -fsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Libraries/PT32Y003x_FWLib/inc -I ../Libraries/SYSTEM -I ../Libraries/CMSIS -I ../driver -I ../RTT -I ../MDK -I ../public/inc -I ../peripheral -I ../../cx2541-Lzb_gesture-ttp229-I./RTE/_Porject-ID:/keil5/ARM/pack/ARM/CMSIS/6.1.0/CMSIS/Core/Include-D__UVISION_VERSION="540" -D_RTE_ -DUSE_STDPERIPH_DRIVER -DUSE_FULL_ASSERT-o ./out/uart.o -MMD)
+F (..\driver\uart.c)(0x6A3DC253)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -flto -Werror -fsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Libraries/PT32Y003x_FWLib/inc -I ../Libraries/SYSTEM -I ../Libraries/CMSIS -I ../driver -I ../RTT -I ../MDK -I ../public/inc -I ../peripheral -I ../../cx2541-Lzb_gesture-ttp229-I./RTE/_Porject-ID:/keil5/ARM/pack/ARM/CMSIS/6.1.0/CMSIS/Core/Include-D__UVISION_VERSION="540" -D_RTE_ -DUSE_STDPERIPH_DRIVER -DUSE_FULL_ASSERT-o ./out/uart.o -MMD)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x.h)(0x685DEAE0)
 I (..\Libraries\CMSIS\core_cm0.h)(0x685DEAE0)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32_Type.h)(0x685DEAE0)
@@ -51,7 +51,7 @@ I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_rcc.h)(0x685DEAE0)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_id.h)(0x685DEAE0)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_exti.h)(0x685DEAE0)
 I (..\driver\uart.h)(0x6861DFCE)
-I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A39E6A3)
+I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A5867DA)
 I (..\driver\tick.h)(0x6A1797EC)
 I (..\peripheral\protocol.h)(0x6A02829A)
 I (..\peripheral\clap.h)(0x694B3B13)
@@ -103,7 +103,7 @@ I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_rcc.h)(0x685DEAE0)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_id.h)(0x685DEAE0)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_exti.h)(0x685DEAE0)
 F (..\driver\tick.h)(0x6A1797EC)()
-F (..\config.h)(0x6A39E6A3)()
+F (..\config.h)(0x6A5867DA)()
 F (..\base.h)(0x685DEAE0)()
 F (..\peripheral\crc.c)(0x685DEAE0)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -flto -Werror -fsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Libraries/PT32Y003x_FWLib/inc -I ../Libraries/SYSTEM -I ../Libraries/CMSIS -I ../driver -I ../RTT -I ../MDK -I ../public/inc -I ../peripheral -I ../../cx2541-Lzb_gesture-ttp229-I./RTE/_Porject-ID:/keil5/ARM/pack/ARM/CMSIS/6.1.0/CMSIS/Core/Include-D__UVISION_VERSION="540" -D_RTE_ -DUSE_STDPERIPH_DRIVER -DUSE_FULL_ASSERT-o ./out/crc.o -MMD)
 I (..\peripheral\crc.h)(0x685DEAE0)
@@ -128,7 +128,7 @@ I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_rcc.h)(0x685DEAE0)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_id.h)(0x685DEAE0)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_exti.h)(0x685DEAE0)
 F (..\peripheral\crc.h)(0x685DEAE0)()
-F (..\peripheral\main.c)(0x6A39E03C)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -flto -Werror -fsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Libraries/PT32Y003x_FWLib/inc -I ../Libraries/SYSTEM -I ../Libraries/CMSIS -I ../driver -I ../RTT -I ../MDK -I ../public/inc -I ../peripheral -I ../../cx2541-Lzb_gesture-ttp229-I./RTE/_Porject-ID:/keil5/ARM/pack/ARM/CMSIS/6.1.0/CMSIS/Core/Include-D__UVISION_VERSION="540" -D_RTE_ -DUSE_STDPERIPH_DRIVER -DUSE_FULL_ASSERT-o ./out/main.o -MMD)
+F (..\peripheral\main.c)(0x6A573C86)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -flto -Werror -fsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Libraries/PT32Y003x_FWLib/inc -I ../Libraries/SYSTEM -I ../Libraries/CMSIS -I ../driver -I ../RTT -I ../MDK -I ../public/inc -I ../peripheral -I ../../cx2541-Lzb_gesture-ttp229-I./RTE/_Porject-ID:/keil5/ARM/pack/ARM/CMSIS/6.1.0/CMSIS/Core/Include-D__UVISION_VERSION="540" -D_RTE_ -DUSE_STDPERIPH_DRIVER -DUSE_FULL_ASSERT-o ./out/main.o -MMD)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x.h)(0x685DEAE0)
 I (..\Libraries\CMSIS\core_cm0.h)(0x685DEAE0)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32_Type.h)(0x685DEAE0)
@@ -153,7 +153,7 @@ I (..\driver\tick.h)(0x6A1797EC)
 I (..\driver\wdg.h)(0x685DEAE0)
 I (..\driver\adc.h)(0x6941FBE7)
 I (..\driver\uart.h)(0x6861DFCE)
-I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A39E6A3)
+I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A5867DA)
 I (..\peripheral\protocol.h)(0x6A02829A)
 I (..\peripheral\clap.h)(0x694B3B13)
 I (..\peripheral\slide.h)(0x694B44ED)
@@ -161,7 +161,7 @@ I (..\peripheral\crc.h)(0x685DEAE0)
 I (..\..\cx2541-Lzb_gesture-ttp229\public.h)(0x694C85D1)
 I (..\peripheral\threshold.h)(0x6A1E4466)
 F (..\peripheral\protocol.c)(0x6A0272B4)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -flto -Werror -fsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Libraries/PT32Y003x_FWLib/inc -I ../Libraries/SYSTEM -I ../Libraries/CMSIS -I ../driver -I ../RTT -I ../MDK -I ../public/inc -I ../peripheral -I ../../cx2541-Lzb_gesture-ttp229-I./RTE/_Porject-ID:/keil5/ARM/pack/ARM/CMSIS/6.1.0/CMSIS/Core/Include-D__UVISION_VERSION="540" -D_RTE_ -DUSE_STDPERIPH_DRIVER -DUSE_FULL_ASSERT-o ./out/protocol.o -MMD)
-I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A39E6A3)
+I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A5867DA)
 I (..\peripheral\protocol.h)(0x6A02829A)
 I (..\peripheral\clap.h)(0x694B3B13)
 I (..\peripheral\slide.h)(0x694B44ED)
@@ -192,10 +192,10 @@ I (..\public\inc\buildInfo.h)(0x5E0B7080)
 I (..\peripheral\threshold.h)(0x6A1E4466)
 F (..\peripheral\protocol.h)(0x6A02829A)()
 F (..\public.h)(0x694C85D1)()
-F (..\peripheral\clap.c)(0x6A3BA563)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -flto -Werror -fsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Libraries/PT32Y003x_FWLib/inc -I ../Libraries/SYSTEM -I ../Libraries/CMSIS -I ../driver -I ../RTT -I ../MDK -I ../public/inc -I ../peripheral -I ../../cx2541-Lzb_gesture-ttp229-I./RTE/_Porject-ID:/keil5/ARM/pack/ARM/CMSIS/6.1.0/CMSIS/Core/Include-D__UVISION_VERSION="540" -D_RTE_ -DUSE_STDPERIPH_DRIVER -DUSE_FULL_ASSERT-o ./out/clap.o -MMD)
+F (..\peripheral\clap.c)(0x6A4B1344)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -flto -Werror -fsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Libraries/PT32Y003x_FWLib/inc -I ../Libraries/SYSTEM -I ../Libraries/CMSIS -I ../driver -I ../RTT -I ../MDK -I ../public/inc -I ../peripheral -I ../../cx2541-Lzb_gesture-ttp229-I./RTE/_Porject-ID:/keil5/ARM/pack/ARM/CMSIS/6.1.0/CMSIS/Core/Include-D__UVISION_VERSION="540" -D_RTE_ -DUSE_STDPERIPH_DRIVER -DUSE_FULL_ASSERT-o ./out/clap.o -MMD)
 I (..\peripheral\clap.h)(0x694B3B13)
 I (..\driver\uart.h)(0x6861DFCE)
-I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A39E6A3)
+I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A5867DA)
 I (..\driver\tick.h)(0x6A1797EC)
 I (..\peripheral\protocol.h)(0x6A02829A)
 I (..\peripheral\slide.h)(0x694B44ED)
@@ -221,10 +221,10 @@ I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_id.h)(0x685DEAE0)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_exti.h)(0x685DEAE0)
 I (..\peripheral\threshold.h)(0x6A1E4466)
 F (..\peripheral\clap.h)(0x694B3B13)()
-F (..\peripheral\slide.c)(0x6A1FE8DC)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -flto -Werror -fsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Libraries/PT32Y003x_FWLib/inc -I ../Libraries/SYSTEM -I ../Libraries/CMSIS -I ../driver -I ../RTT -I ../MDK -I ../public/inc -I ../peripheral -I ../../cx2541-Lzb_gesture-ttp229-I./RTE/_Porject-ID:/keil5/ARM/pack/ARM/CMSIS/6.1.0/CMSIS/Core/Include-D__UVISION_VERSION="540" -D_RTE_ -DUSE_STDPERIPH_DRIVER -DUSE_FULL_ASSERT-o ./out/slide.o -MMD)
+F (..\peripheral\slide.c)(0x6A57527F)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -flto -Werror -fsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Libraries/PT32Y003x_FWLib/inc -I ../Libraries/SYSTEM -I ../Libraries/CMSIS -I ../driver -I ../RTT -I ../MDK -I ../public/inc -I ../peripheral -I ../../cx2541-Lzb_gesture-ttp229-I./RTE/_Porject-ID:/keil5/ARM/pack/ARM/CMSIS/6.1.0/CMSIS/Core/Include-D__UVISION_VERSION="540" -D_RTE_ -DUSE_STDPERIPH_DRIVER -DUSE_FULL_ASSERT-o ./out/slide.o -MMD)
 I (..\peripheral\slide.h)(0x694B44ED)
 I (..\driver\uart.h)(0x6861DFCE)
-I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A39E6A3)
+I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A5867DA)
 I (..\driver\tick.h)(0x6A1797EC)
 I (..\peripheral\protocol.h)(0x6A02829A)
 I (..\peripheral\clap.h)(0x694B3B13)
@@ -274,7 +274,7 @@ I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_id.h)(0x685DEAE0)
 I (..\Libraries\PT32Y003x_FWLib\inc\PT32Y003x_exti.h)(0x685DEAE0)
 I (..\peripheral\crc.h)(0x685DEAE0)
 I (..\driver\uart.h)(0x6861DFCE)
-I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A39E6A3)
+I (..\..\cx2541-Lzb_gesture-ttp229\config.h)(0x6A5867DA)
 I (..\driver\tick.h)(0x6A1797EC)
 I (..\peripheral\protocol.h)(0x6A02829A)
 I (..\peripheral\clap.h)(0x694B3B13)
